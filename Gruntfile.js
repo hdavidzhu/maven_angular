@@ -48,6 +48,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+      scss: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+        tasks: ['sass']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -354,6 +358,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

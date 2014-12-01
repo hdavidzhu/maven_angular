@@ -23,9 +23,21 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/landing', {
+        templateUrl: 'views/landing.html',
+        controller: 'LandingCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/q_a', {
+        templateUrl: 'views/q_a.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
       })
       .otherwise({
         redirectTo: '/'
