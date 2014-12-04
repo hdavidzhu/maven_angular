@@ -19,10 +19,6 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .when('/landing', {
         templateUrl: 'views/landing.html',
         controller: 'LandingCtrl'
@@ -31,12 +27,20 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/q_a', {
+      .when('/', {
         templateUrl: 'views/q_a.html',
         controller: 'ProfileCtrl'
       })
       .when('/profile', {
         templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/ask', {
+        templateUrl: 'views/ask.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/answer', {
+        templateUrl: 'views/answer.html',
         controller: 'ProfileCtrl'
       })
       .otherwise({
