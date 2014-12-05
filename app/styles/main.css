@@ -72,6 +72,26 @@ body {
   color: blue;
 }
 
+/* Toolbar Styles */
+.notifSmall {
+  width: 10px;
+  height: 10px;
+  background: url(../images/notif.png);
+  -webkit-background-size: 10px 10px;
+  -moz-background-size: 10px 10px;
+  -o-background-size: 10px 10px;
+  background-size: 10px 10px;
+}
+.notifLarge {
+  width: 30px;
+  height: 30px;
+  background: url(../images/notif.png);
+  -webkit-background-size: 30px 30px;
+  -moz-background-size: 30px 30px;
+  -o-background-size: 30px 30px;
+  background-size: 30px 30px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
