@@ -7,7 +7,10 @@
  * # ProfileCtrl
  * Controller of the mavenAngularApp
  */
+
+var 
+
+
 angular.module('mavenAngularApp')
   .controller('ProfileCtrl', function ($scope) {
-
   });
