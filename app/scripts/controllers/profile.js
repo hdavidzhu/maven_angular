@@ -13,7 +13,8 @@ var samProfile = {
 	"video": "gefPe38yo9g",
 	"question": "What is my question?",
 	"experience": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var sarahProfile = {
@@ -21,7 +22,8 @@ var sarahProfile = {
 	"video": "Mz9ZHGbq0f4",
 	"question": "What is another question?",
 	"experience": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var vickyProfile = {
@@ -29,7 +31,8 @@ var vickyProfile = {
 	"video": "97LgGWhJphE",
 	"question": "I'm running out of ideas.",
 	"experience": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var vinceProfile = {
@@ -37,10 +40,15 @@ var vinceProfile = {
 	"video": "vOJ9Rcmijh0",
 	"question": "We can fill these in later.",
 	"experience": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var profileList = [samProfile, sarahProfile, vickyProfile, vinceProfile];
+
+var questionMatches = [];
+
+var answerMatches =[];
 
 angular.module('mavenAngularApp')
   .controller('ProfileCtrl', function ($scope, $sce) {
