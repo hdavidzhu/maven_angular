@@ -82,6 +82,7 @@ a {
   float: left;
   font-size: 2.5em; 
   text-align: center;
+  position: relative;
 }
 .bt_large.q {
   color: white;
@@ -90,6 +91,10 @@ a {
 .bt_large.a {
   color: white;
   background-color: #94d6f0;
+}
+.bt_large img {
+  padding: 1em;
+  height: 50%;
 }
 
 /* Toolbar Styles */
