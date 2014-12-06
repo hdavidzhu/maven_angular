@@ -1,23 +1,13 @@
-<div ng-include src="'views/toolbar.html'"></div>
+<div ng-controller="ProfileCtrl">
 
-<div class="question">
-	
+	<div ng-include src="'views/toolbar.html'"></div>
+
+	<div class="question">{{userProfile.question}}</div>
+	<div class="video" user-video video="video"></div>
+	<div class="name">{{userProfile.name}}</div>
+	<div class="Experience">{{userProfile.experience}}</div>
+	<div class="Passions">{{userProfile.passions}}</div>
+
+	<div ng-include src="'views/yes_no.html'"></div>
+
 </div>
-
-<div class="video">
-	
-</div>
-
-<div class="name">
-	
-</div>
-
-<div class="Experience">
-	
-</div>
-
-<div class="Passions">
-	
-</div>
-
-<div ng-include src="'views/yes_no.html'"></div>
