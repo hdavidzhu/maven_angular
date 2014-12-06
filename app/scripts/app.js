@@ -35,6 +35,22 @@ angular
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/profile/my_profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/profile/discover_questioners', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/profile/discover_answerers', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/profile/view_profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .when('/ask', {
         templateUrl: 'views/ask.html',
         controller: 'ProfileCtrl'
