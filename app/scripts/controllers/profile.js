@@ -12,35 +12,43 @@ var samProfile = {
 	"name": "Sam",
 	"video": "gefPe38yo9g",
 	"question": "What is my question?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"experience": ["Cats", "Dogs"],
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var sarahProfile = {
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
 	"question": "What is another question?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"experience": ["Cats", "Dogs"],
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var vickyProfile = {
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
 	"question": "I'm running out of ideas.",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"experience": ["Cats", "Dogs"],
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var vinceProfile = {
 	"name": "Vince",
 	"video": "vOJ9Rcmijh0",
 	"question": "We can fill these in later.",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"]
+	"experience": ["Cats", "Dogs"],
+	"passions": ["Birds", "Balloons"],
+  "images": "../images/yeoman.png"
 }
 
 var profileList = [samProfile, sarahProfile, vickyProfile, vinceProfile];
+
+var questionMatches = [];
+
+var answerMatches =[];
 
 angular.module('mavenAngularApp')
   .controller('ProfileCtrl', function ($scope, $sce, $location) {
