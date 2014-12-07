@@ -19,6 +19,9 @@ body {
 a {
   text-decoration: none;
 }
+a:hover {
+  text-decoration: none;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -88,19 +91,85 @@ a {
   color: white;
   background-color: #54b2e3;
 }
+.bt_large.q:hover {
+  background-color: #289edc;
+}
 .bt_large.a {
   color: white;
-  background-color: #94d6f0;
+  background-color: #ffb100;
+}
+.bt_large.a:hover {
+  background-color: #ff9a00;
 }
 .bt_large img {
   padding: 1em;
   height: 50%;
 }
 
+/*Profile Styles */
+
+.leftprof {
+  margin: 4.15%;
+}
+
+.scroll {
+  overflow-y: scroll;
+  background-color: #3eeab8;
+  height: 737px;
+}
+
+.name {
+  font-size: 4em;
+  font-weight: 700;
+}
+
+.question {
+  font-size: 2em;
+  font-weight: 700;
+  padding-bottom: .5em;
+  margin-top: -1.5em;
+}
+
+.Experience, .Passions {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+/* yes/no */
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+.noButton, .yesButton {
+  position: relative;
+  float: left;
+  width: 50%;
+  margin: 0;
+  height: 100%;
+}
+
+.noButton {
+  background-color: #ff3333;
+}
+.noButton:hover {
+  background-color: #ff0000; 
+}
+
+.yesButton {
+  background-color: #1aff1a;
+}
+.yesButton:hover {
+  background-color: #00e600;
+}
+
 /* Toolbar Styles */
+
 .notifSmall {
   width: 10px;
   height: 10px;
+  margin-top: 22px;
   background: url(../images/notif.png);
   -webkit-background-size: 10px 10px;
   -moz-background-size: 10px 10px;
@@ -110,6 +179,7 @@ a {
 .notifLarge {
   width: 30px;
   height: 30px;
+  margin-top: 11px;
   background: url(../images/notif.png);
   -webkit-background-size: 30px 30px;
   -moz-background-size: 30px 30px;

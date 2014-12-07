@@ -20,7 +20,7 @@ var samProfile = {
 var sarahProfile = {
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
-	"question": "What is another question?",
+	"question": "What is it like being a woman in tech?",
 	"experience": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "images": "../images/yeoman.png"
@@ -29,7 +29,7 @@ var sarahProfile = {
 var vickyProfile = {
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
-	"question": "I'm running out of ideas.",
+	"question": "Why are we here?",
 	"experience": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "images": "../images/yeoman.png"
@@ -38,7 +38,7 @@ var vickyProfile = {
 var vinceProfile = {
 	"name": "Vince",
 	"video": "vOJ9Rcmijh0",
-	"question": "We can fill these in later.",
+	"question": "What is the meaning of life?",
 	"experience": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "images": "../images/yeoman.png"
@@ -70,6 +70,7 @@ angular.module('mavenAngularApp')
         break;
 
       case "/profile/discover_answerers":
+        $scope.discovering = true;
         break;
 
       case "/profile/view_profile":
@@ -110,7 +111,7 @@ angular.module('mavenAngularApp')
   	  restrict: 'EA',
   	  scope: { video:'=' },
   	  replace: true,
-  	  template: '<div style="height:400px;"><iframe style="overflow:hidden;height:100%;width:50%" width="100%" height="100%" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
+  	  template: '<div><iframe style="overflow:hidden;" src="{{url}}" frameborder="0" allowfullscreen></iframe></div>',
   	  link: function (scope) {
   	      scope.$watch('video', function (newVal) {
   	         if (newVal) {
