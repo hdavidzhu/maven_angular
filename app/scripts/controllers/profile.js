@@ -103,7 +103,7 @@ angular.module('mavenAngularApp')
 
     $scope.qalist = qalist;
 
-    $scope.saveToList = function(user, list){
+    $scope.saveToList = function(user){
       localStorage.setItem(user.name, user);
       if (list = 'q') {
         $scope.qalist.questionMatches.push(user);
