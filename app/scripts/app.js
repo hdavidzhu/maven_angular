@@ -52,14 +52,15 @@ angular
         controller: 'ProfileCtrl'
       })
       .when('/ask', {
-        templateUrl: 'views/ask.html',
-        controller: 'ProfileCtrl'
+        templateUrl: 'views/qa_homepage.html',
+        controller: 'QACtrl'
       })
       .when('/answer', {
-        templateUrl: 'views/answer.html',
-        controller: 'ProfileCtrl'
+        templateUrl: 'views/qa_homepage.html',
+        controller: 'QACtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+;

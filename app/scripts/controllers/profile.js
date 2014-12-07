@@ -12,46 +12,44 @@ var samProfile = {
 	"name": "Sam",
 	"video": "gefPe38yo9g",
 	"question": "What is my question?",
-	"experience": ["Cats", "Dogs"],
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "images": "../images/yeoman.png"
+  "image": "../images/yeoman.png"
 }
 
 var sarahProfile = {
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
 	"question": "What is another question?",
-	"experience": ["Cats", "Dogs"],
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "images": "../images/yeoman.png"
+  "image": "../images/yeoman.png"
 }
 
 var vickyProfile = {
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
 	"question": "I'm running out of ideas.",
-	"experience": ["Cats", "Dogs"],
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "images": "../images/yeoman.png"
+  "image": "../images/yeoman.png"
 }
 
 var vinceProfile = {
 	"name": "Vince",
 	"video": "vOJ9Rcmijh0",
 	"question": "We can fill these in later.",
-	"experience": ["Cats", "Dogs"],
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "images": "../images/yeoman.png"
+  "image": "../images/yeoman.png"
 }
 
 var profileList = [samProfile, sarahProfile, vickyProfile, vinceProfile];
-
 var questionMatches = [];
-
 var answerMatches =[];
 
 angular.module('mavenAngularApp')
-  .controller('ProfileCtrl', function ($scope, $sce, $location) {
+  .controller('ProfileCtrl', function ($scope, $sce, $location, qalist) {
 
     // To help us keep the profile lists random.
     function shuffle(o){ //v1.0
@@ -62,14 +60,17 @@ angular.module('mavenAngularApp')
     profileList = shuffle(profileList);
 
     var profile_mode = $location.path();
+    var list;
 
     switch(profile_mode) {
       case "/profile/discover_questioners":
         $scope.question_show = true;
         $scope.discovering = true;
+        list = 'q';
         break;
 
       case "/profile/discover_answerers":
+        list = 'a';
         break;
 
       case "/profile/view_profile":
@@ -99,10 +100,16 @@ angular.module('mavenAngularApp')
   		$scope.video = $scope.userProfile.video;
   	}
 
-    $scope.saveToQList = function(user){
-      console.log(user);
+    $scope.qalist = qalist;
+
+    $scope.saveToList = function(user, list){
       localStorage.setItem(user.name, user);
-      console.log(localStorage.getItem(user.name));
+      if (list = 'q') {
+        $scope.qalist.questionMatches.push(user);
+        console.log($scope.qalist.questionMatches);
+      } else if (list = 'a') {
+        $scope.qalist.answerMatches.push(user);
+      }
     }
   })
   .directive('userVideo', function($sce) {
@@ -127,4 +134,10 @@ angular.module('mavenAngularApp')
             $(element).bootstrapSwitch();
         }
     }
+  });
+
+angular.module('mavenAngularApp')
+  .service('qalist', function() {
+    this.questionMatches = [];
+    this.answerMatches =[];
   });
