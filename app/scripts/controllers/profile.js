@@ -9,6 +9,7 @@
  */
 
 var samProfile = {
+  "id": "sam",
 	"name": "Sam",
 	"video": "gefPe38yo9g",
 	"question": "What is my question?",
@@ -18,6 +19,7 @@ var samProfile = {
 }
 
 var sarahProfile = {
+  "id": "sarah",
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
 	"question": "What is another question?",
@@ -27,6 +29,7 @@ var sarahProfile = {
 }
 
 var vickyProfile = {
+  "id": "vicky",
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
 	"question": "I'm running out of ideas.",
@@ -36,7 +39,8 @@ var vickyProfile = {
 }
 
 var vinceProfile = {
-	"name": "Vince",
+	"id": "vince",
+  "name": "Vince",
 	"video": "vOJ9Rcmijh0",
 	"question": "We can fill these in later.",
 	"experiences": ["Cats", "Dogs"],
@@ -44,7 +48,7 @@ var vinceProfile = {
   "image": "../images/yeoman.png"
 }
 
-var profileList = [samProfile, sarahProfile, vickyProfile, vinceProfile];
+var profileList = [];
 var questionMatches = [];
 var answerMatches =[];
 
@@ -57,32 +61,46 @@ angular.module('mavenAngularApp')
         return o;
     };
 
+    profileList = [samProfile, sarahProfile, vickyProfile, vinceProfile];
     profileList = shuffle(profileList);
 
     var profile_mode = $location.path();
     var list;
 
-    switch(profile_mode) {
-      case "/profile/discover_questioners":
-        $scope.question_show = true;
-        $scope.discovering = true;
-        list = 'q';
-        break;
+    if (profile_mode.indexOf("/profile/person/") > -1) {
+      var person_id = profile_mode.substr(16);
 
-      case "/profile/discover_answerers":
-        $scope.discovering = true;
-        list = 'a';
-        break;
+      // var chosenPerson = profileList[0];
 
-      case "/profile/view_profile":
-        $scope.scheduling = true;
-        break;
+      for (var i = 0; i < profileList.length; i++) {
+        if (person_id == profileList[i].id) {
+          var chosenPerson = profileList[i];
+          profileList = [];
+          profileList.push(chosenPerson);
+        }
+      }
 
-      case "/profile/my_profile":
-        $scope.editing = true;
-        break;
+      $scope.scheduling = true;
+      
+    } else {
+      switch(profile_mode) {
+        case "/profile/discover_questioners":
+          $scope.question_show = true;
+          $scope.discovering = true;
+          list = 'q';
+          break;
 
-      default:
+        case "/profile/discover_answerers":
+          $scope.discovering = true;
+          list = 'a';
+          break;
+
+        case "/profile/my_profile":
+          $scope.editing = true;
+          break;
+
+        default:
+      }
     }
 
     $scope.profilenum = 0;
@@ -139,6 +157,7 @@ angular.module('mavenAngularApp')
 
 angular.module('mavenAngularApp')
   .service('qalist', function() {
+    this.profileList = profileList;
     this.questionMatches = [];
     this.answerMatches =[];
   });

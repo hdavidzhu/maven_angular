@@ -22,9 +22,13 @@
 			}
 		}
 
-		// var goToProfile = function(person){
-			
-		// }
+		$scope.goToProfile = function(person_id){
+			// console.log(person_id);
+			var host = $location.host();
+			console.log($location.path());
+			// console.log(host + "/#/profile/person/"+ person_id);
+			$location.path( "/profile/person/" + person_id);
+		}
 
 		switch (qa_mode) {
 			case "/ask":
