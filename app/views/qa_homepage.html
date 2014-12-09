@@ -12,10 +12,9 @@
 	</div>
 
 	<div >
-		<div ng-repeat="person in displayList track by $index">
-			<img src="{{person.image}}">
-			<div>{{person.name}}</div>
-
+		<div ng-repeat="person in displayList track by $index" ng-click>
+				<img src="{{person.image}}">
+				<div>{{person.name}}</div>
 		</div>
 	</div>
 

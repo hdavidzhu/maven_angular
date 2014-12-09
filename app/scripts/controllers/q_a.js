@@ -22,6 +22,10 @@
 			}
 		}
 
+		// var goToProfile = function(person){
+			
+		// }
+
 		switch (qa_mode) {
 			case "/ask":
 				$scope.q_form_show = true; 
@@ -32,5 +36,7 @@
 				populateProfiles(qa_mode);
 				break;
 		}
+
+
 
   });
