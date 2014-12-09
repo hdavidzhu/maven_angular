@@ -20,8 +20,8 @@ var samProfile = {
 var sarahProfile = {
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
-	"question": "What is it like being a woman in tech?",
-	"experience": ["Cats", "Dogs"],
+	"question": "What is another question?",
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "image": "../images/yeoman.png"
 }
@@ -29,8 +29,8 @@ var sarahProfile = {
 var vickyProfile = {
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
-	"question": "Why are we here?",
-	"experience": ["Cats", "Dogs"],
+	"question": "I'm running out of ideas.",
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "image": "../images/yeoman.png"
 }
@@ -38,8 +38,8 @@ var vickyProfile = {
 var vinceProfile = {
 	"name": "Vince",
 	"video": "vOJ9Rcmijh0",
-	"question": "What is the meaning of life?",
-	"experience": ["Cats", "Dogs"],
+	"question": "We can fill these in later.",
+	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "image": "../images/yeoman.png"
 }
@@ -103,7 +103,7 @@ angular.module('mavenAngularApp')
 
     $scope.qalist = qalist;
 
-    $scope.saveToList = function(user){
+    $scope.saveToList = function(user, list){
       localStorage.setItem(user.name, user);
       if (list = 'q') {
         $scope.qalist.questionMatches.push(user);

@@ -36,7 +36,4 @@
 				populateProfiles(qa_mode);
 				break;
 		}
-
-
-
   });
