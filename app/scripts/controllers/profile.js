@@ -32,7 +32,7 @@ var vickyProfile = {
   "id": "vicky",
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
-	"question": "I'm running out of ideas.",
+	"question": "I'm running out of ideas.asoifjs doifj sdoifjsdofijs dfoijs dofijs dofj sdijf soidjf sdjf oisdjf osidjfoisjdfoijsiodjf sod fsijd fsoidjf soidf j?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "image": "../images/Vicky.jpg"
@@ -42,7 +42,7 @@ var vinceProfile = {
 	"id": "vince",
   "name": "Vince",
 	"video": "vOJ9Rcmijh0",
-	"question": "We can fill these in later.",
+	"question": "asoifjs doifj sdoifjsdofijs dfoijs dofijs dofj sdijf soidjf sdjf oisdjf osidjfoisjdfoijsiodjf sod fsijd fsoidjf soidf j?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
   "image": "../images/Vince.jpg"
