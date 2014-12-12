@@ -1,4 +1,4 @@
-<nav role="navigation" class="navbar navbar-inverse">
+<nav ng-controller="ToolbarCtrl" role="navigation" class="navbar navbar-inverse">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
       <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -21,7 +21,14 @@
       </ul>
       <span class="icon-bar"></span>
       <ul class="nav navbar-nav navbar">
-        <li><a href="#" class="notifLarge"></a></li>
+        <li class="dropdown"><a data-toggle="dropdown" class="notifLarge dropdown-toggle">{{total_matches}}</a>
+        <ul class="dropdown-menu">
+            <li><a href="#/ask">New Ask Matches: {{questionMatches}}</a></li>
+            <li><a href="#/answer">New Answer Matches: {{answerMatches}}</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Trash</a></li>
+        </ul>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
