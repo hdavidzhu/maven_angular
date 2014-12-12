@@ -51,6 +51,10 @@ angular
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/profile/person/:person_id', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .when('/ask', {
         templateUrl: 'views/qa_homepage.html',
         controller: 'QACtrl'
