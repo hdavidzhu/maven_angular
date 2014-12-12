@@ -13,8 +13,8 @@ var samProfile = {
 	"name": "Sam",
 	"video": "gefPe38yo9g",
 	"question": "What is my question?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"],
+	"experiences": ["Bioengineering - Tufts University, Junior", "Research Assistant MIT Bio Lab Summer 2014"],
+	"passions": ["Theater Tech", "Lighting Design", "Playing the Guitar"],
   "image": "../images/Sam.jpg"
 }
 
@@ -22,9 +22,9 @@ var sarahProfile = {
   "id": "sarah",
 	"name": "Sarah",
 	"video": "Mz9ZHGbq0f4",
-	"question": "What is another question?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"],
+	"question": "How can I use graphic design in a meaningful way?",
+	"experiences": ["Artist at Computer Fine Arts 2014-Present (6 months)", "Art Intern at Zerooone Summer 2013", "Graduated NYU Spring 2014"],
+	"passions": ["Puzzles", "Illustration", "SciFi Movies"],
   "image": "../images/Sarah.jpg"
 }
 
@@ -32,9 +32,9 @@ var vickyProfile = {
   "id": "vicky",
 	"name": "Vicky",
 	"video": "97LgGWhJphE",
-	"question": "I'm running out of ideas.asoifjs doifj sdoifjsdofijs dfoijs dofijs dofj sdijf soidjf sdjf oisdjf osidjfoisjdfoijsiodjf sod fsijd fsoidjf soidf j?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"],
+	"question": "What's the best lesson you've ever learned from your parents?",
+	"experiences": ["20 years Deloitte Consulting LLP", "5 years McKinney & Company", "Computer Sales Person 2 years"],
+	"passions": ["Gender Equity", "Swimming", "Family"],
   "image": "../images/Vicky.jpg"
 }
 
@@ -42,9 +42,9 @@ var vinceProfile = {
 	"id": "vince",
   "name": "Vince",
 	"video": "vOJ9Rcmijh0",
-	"question": "asoifjs doifj sdoifjsdofijs dfoijs dofijs dofj sdijf soidjf sdjf oisdjf osidjfoisjdfoijsiodjf sod fsijd fsoidjf soidf j?",
-	"experiences": ["Cats", "Dogs"],
-	"passions": ["Birds", "Balloons"],
+	"question": "How can I integrate my passion for photography into my everyday life?",
+	"experiences": ["Teaching math at Austin Community College 10 years", "Business Analyst at Wells Fargo 5 years"],
+	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
   "image": "../images/Vince.jpg"
 }
 
