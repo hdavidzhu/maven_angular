@@ -121,14 +121,21 @@ angular.module('mavenAngularApp')
 
     $scope.qalist = qalist;
 
-    $scope.saveToList = function(user, list){
+    $scope.saveToList = function(user){
+      alert(list);
       localStorage.setItem(user.name, user);
-      if (list = 'q') {
+      if (list == 'q') {
         $scope.qalist.questionMatches.push(user);
         console.log($scope.qalist.questionMatches);
-      } else if (list = 'a') {
+      } else if (list == 'a') {
         $scope.qalist.answerMatches.push(user);
       }
+    }
+
+    $scope.editing_on = false;
+
+    $scope.editingMode = function(){
+      $scope.editing_on = !$scope.editing_on;
     }
   })
   .directive('userVideo', function($sce) {
