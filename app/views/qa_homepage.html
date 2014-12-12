@@ -12,16 +12,23 @@
 
 	<br>
 	<div class="matches_header">Matches</div>
-	<div ng-hide="myAskMatches">
-	<div class="no_matches_text">You don't have any matches!</div>
+	<div ng-show="a_form_show">
+		<div ng-hide="myAnswerMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
+	</div>
+	<div ng-show="q_form_show">
+		<div ng-hide="myAskMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
 	</div>
 
 	<div >
 		<div ng-repeat="person in displayList track by $index">
 			<!-- <div ng-click = "goToProfile(person.id)"> -->
-			<div ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
+			<div class="matchDisplay col-md-3" ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
 				<img width="200px" src="{{person.image}}">
-				<div>{{person.name}}</div>
+				<div class="matchName">{{person.name}}</div>
 			</div>
 		</div>
 	</div>

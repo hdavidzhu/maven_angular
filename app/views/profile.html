@@ -13,6 +13,9 @@
 				<div class="video embed-responsive-item" user-video video="video"></div>
 			</div>
 			<div class="Yes_No ng-hide" ng-show="discovering" ng-include src="'views/yes_no.html'"></div>
+			<div class="scheduleMeeting ng-hide" ng-show="scheduling">
+				<button class="scheduleButton">Find Meeting Time</button>
+			</div>
 		</div>
 		
 		<div class="col-md-5 scroll">
@@ -32,11 +35,6 @@
 				</ul>
 			</div>
 		</div>
-
-		<div class="Schedule_Meeting ng-hide" ng-show="scheduling">
-			<button>Find Meeting Time</button>
-		</div>
-
 	</div>
 
 </div>
