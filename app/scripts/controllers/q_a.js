@@ -17,8 +17,14 @@
 			$scope.qalist = qalist;
 			if (qa_mode == "/ask") {
 				$scope.displayList = $scope.qalist.questionMatches;
+				if ($scope.qalist.questionMatches.length != 0) {
+					$scope.myAskMatches = true;
+				}
 			} else if (qa_mode == "/answer") {
 				$scope.displayList = $scope.qalist.answerMatches;
+				if ($scope.qalist.answerMatches.length != 0) {
+					$scope.myAnswerMatches = true;
+				}
 			}
 		}
 

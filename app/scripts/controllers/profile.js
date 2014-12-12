@@ -87,12 +87,12 @@ angular.module('mavenAngularApp')
         case "/profile/discover_questioners":
           $scope.question_show = true;
           $scope.discovering = true;
-          list = 'q';
+          list = 'a';
           break;
 
         case "/profile/discover_answerers":
           $scope.discovering = true;
-          list = 'a';
+          list = 'q';
           break;
 
         case "/profile/my_profile":
@@ -122,7 +122,6 @@ angular.module('mavenAngularApp')
     $scope.qalist = qalist;
 
     $scope.saveToList = function(user){
-      alert(list);
       localStorage.setItem(user.name, user);
       if (list == 'q') {
         $scope.qalist.questionMatches.push(user);
