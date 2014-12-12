@@ -15,7 +15,7 @@
 		<div ng-repeat="person in displayList track by $index">
 			<!-- <div ng-click = "goToProfile(person.id)"> -->
 			<div ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
-				<img src="{{person.image}}">
+				<img width="200px" src="{{person.image}}">
 				<div>{{person.name}}</div>
 			</div>
 		</div>
