@@ -29,6 +29,7 @@
 				console.log($scope.displayList);
 				break;
 			case "/answer":
+				$scope.a_form_show = true;
 				populateProfiles(qa_mode);
 				break;
 		}
