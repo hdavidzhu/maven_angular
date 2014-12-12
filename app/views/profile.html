@@ -4,8 +4,11 @@
 
 	<div class="prof">
 		<div class="EditMode ng-hide" ng-show="editing">
-			<input type="checkbox" button-switch checked>
+			<!-- <input type="checkbox" ng-click="editingMode()" button-switch checked> -->
+			<input type="checkbox" ng-click="editingMode()">
 		</div>
+
+		<button ng-click="editingMode()">jd;lakjsdf;lasjdflksaj</button>
 
 		<div class="col-md-6 leftprof">
 			<div class="question ng-hide" ng-show="question_show">{{userProfile.question}}</div>
@@ -16,7 +19,8 @@
 		</div>
 		
 		<div class="col-md-5 scroll">
-			<div class="name">{{userProfile.name}}</div>
+			<div ng-if="editing_on != true" class="name">{{userProfile.name}}</div>
+			<input ng-if="editing_on" placeholder="{{userProfile.name}}">
 
 			<div class="Experience">
 				Experience
