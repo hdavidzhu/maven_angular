@@ -15,7 +15,7 @@ var samProfile = {
 	"question": "What is my question?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/yeoman.png"
+  "image": "../images/Sam.jpg"
 }
 
 var sarahProfile = {
@@ -25,7 +25,7 @@ var sarahProfile = {
 	"question": "What is another question?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/yeoman.png"
+  "image": "../images/Sarah.jpg"
 }
 
 var vickyProfile = {
@@ -35,7 +35,7 @@ var vickyProfile = {
 	"question": "I'm running out of ideas.",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/yeoman.png"
+  "image": "../images/Vicky.jpg"
 }
 
 var vinceProfile = {
@@ -45,7 +45,7 @@ var vinceProfile = {
 	"question": "We can fill these in later.",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/yeoman.png"
+  "image": "../images/Vince.jpg"
 }
 
 var profileList = [];
