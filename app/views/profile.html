@@ -1,42 +1,66 @@
-<div ng-controller="ProfileCtrl">
+<div ng-controller="ProfileCtrl as profileCtrl">
 
+	<!-- Include toolbar -->
 	<div ng-include src="'views/toolbar.html'"></div>
+		
+	<div class="EditMode ng-hide" ng-show="editing">
+		<button ng-click="editingMode()">Toggle Editing: {{editing_text}}</button>
+	</div>
 
-	<div class="prof">
-		<div class="EditMode ng-hide" ng-show="editing">
-			<input type="checkbox" button-switch checked>
+	<div class="col-md-6 leftprof">
+		<div class="question ng-hide" ng-show="question_show">{{userProfile.question}}</div>
+		
+		<div ng-if="editing_on != true" class="embed-responsive embed-responsive-16by9">
+			<div class="video embed-responsive-item" user-video video="video"></div>
 		</div>
+		<input ng-if="editing_on" placeholder="{{userProfile.video}}" ng-model="profileCtrl.editVideo">
 
-		<div class="col-md-6 leftprof">
-			<div class="question ng-hide" ng-show="question_show">{{userProfile.question}}</div>
-			<div class="embed-responsive embed-responsive-16by9">
-				<div class="video embed-responsive-item" user-video video="video"></div>
-			</div>
-			<div class="Yes_No ng-hide" ng-show="discovering" ng-include src="'views/yes_no.html'"></div>
+		<div class="Yes_No ng-hide" ng-show="discovering" ng-include src="'views/yes_no.html'"></div>
+	</div>
+	
+	<div class="col-md-5 scroll">
+		
+		<!-- Name -->
+		<div ng-if="editing_on != true" class="name">{{userProfile.name}}</div>
+		<input class="name" ng-if="editing_on" placeholder="{{userProfile.name}}" ng-model="profileCtrl.editName">
+
+		<!-- Experience -->
+		<div  class="Experience">
+			Experience
+			<ul >
+				<li ng-if="editing_on != true" ng-repeat="experience in userProfile.experiences track by $index">{{experience}}</li>
+				<li ng-if="editing_on" ng-repeat="experience in userProfile.experiences track by $index">
+					{{experience}}
+					<button ng-click="removeInfo('experiences',$index)">X</button>
+				</li>
+				<li ng-if="editing_on">
+					<input placeholder="Add more Experiences." ng-model="profileCtrl.editExperience">
+					<button ng-click="addToInfo('experience')">Add More</button>
+				</li>
+			</ul>
 		</div>
 		
-		<div class="col-md-5 scroll">
-			<div class="name">{{userProfile.name}}</div>
-
-			<div class="Experience">
-				Experience
-				<ul>
-					<li ng-repeat="experience in userProfile.experiences">{{experience}}</li>
-				</ul>
-			</div>
-			
-			<div class="Passions">
-				Passions
-				<ul>
-					<li ng-repeat="passion in userProfile.passions">{{passion}}</li>
-				</ul>
-			</div>
+		<!-- Passions -->
+		<div class="Passions">
+			Passions
+			<ul>
+				<li ng-if="editing_on != true" ng-repeat="passion in userProfile.passions track by $index">{{passion}}</li>
+				<li ng-if="editing_on" ng-repeat="passion in userProfile.passions track by $index">
+					{{passion}}
+					<button ng-click="removeInfo('passions',$index)">X</button>
+				</li>
+				<li ng-if="editing_on">
+					<input placeholder="Add more Passions." ng-model="profileCtrl.editPassion">
+					<button ng-click="addToInfo('passion')">Add More</button>
+				</li>
+			</ul>
 		</div>
 
-		<div class="Schedule_Meeting ng-hide" ng-show="scheduling">
-			<button>Find Meeting Time</button>
-		</div>
+	</div>
 
+	<!-- Schedule a meeting -->
+	<div class="Schedule_Meeting ng-hide" ng-show="scheduling">
+		<button>Find Meeting Time</button>
 	</div>
 
 </div>
