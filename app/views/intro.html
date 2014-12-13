@@ -1,2 +1,15 @@
-<button>Login</button>
-<button>Sign up</button>
+<button ng-click="loginbox=!loginbox; signupbox = false" ng-init="loginbox=false">Login</button>
+<button ng-click="signupbox=!signupbox; loginbox = false" ng-init="signupbox=false">Sign up</button>
+
+<form ng-show="loginbox">
+	<input placeholder="Username">
+	<input placeholder="Password" type="password">
+	<input type="submit" value="Login" onclick="window.location='#/';">
+</form>
+
+<form ng-show="signupbox">
+	<input placeholder="Username">
+	<input placeholder="Password" type="password">
+	<input placeholder="Retype password." type="password">
+	<input type="submit" value="Let's Build My Profile!" onclick="window.location='#/profile/my_profile';">
+</form>
