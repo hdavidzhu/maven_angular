@@ -48,6 +48,16 @@ var vinceProfile = {
   "image": "../images/Vince.jpg"
 }
 
+var myProfile = {
+  "id": "",
+  "name": "",
+  "video": "",
+  "question": "",
+  "experiences": [],
+  "passions": [],
+  "image": ""
+}
+
 var profileList = [];
 var questionMatches = [];
 var answerMatches =[];
@@ -97,9 +107,26 @@ angular.module('mavenAngularApp')
 
         case "/profile/my_profile":
           $scope.editing = true;
-          break;
 
-        default:
+          if (localStorage.getItem("myName") != null) {
+            myProfile.name = localStorage.getItem("myName");
+          }
+          if (localStorage.getItem("myVideo") != null) {
+            myProfile.video = localStorage.getItem("myVideo");
+          }
+          if (localStorage.getItem("myExperiences") != null) {
+            myProfile.experiences = JSON.parse(localStorage["myExperiences"]);
+          }
+          if (localStorage.getItem("myPassions") != null) {
+            myProfile.passions = JSON.parse(localStorage["myPassions"]);
+          }
+          if (localStorage.getItem("myImage") != null) {
+            myProfile.image = localStorage.getItem("myImage");
+          }
+
+          profileList = [];
+          profileList = [myProfile];
+          break;
       }
     }
 
@@ -108,7 +135,8 @@ angular.module('mavenAngularApp')
   	$scope.userProfile = profileList[$scope.profilenum];
   	$scope.video = $scope.userProfile.video;
 
-  	$scope.profilePlus = function(){
+    // This function moves the next profile forward and updates the video.
+    $scope.profilePlus = function(){
   		$scope.profilenum = $scope.profilenum + 1;
 
   		if ($scope.profilenum >= profileList.length) {
@@ -119,10 +147,11 @@ angular.module('mavenAngularApp')
   		$scope.video = $scope.userProfile.video;
   	}
 
+    // Lists for the questions and answers.
     $scope.qalist = qalist;
 
+    // Determines which list to save to.
     $scope.saveToList = function(user){
-      alert(list);
       localStorage.setItem(user.name, user);
       if (list == 'q') {
         $scope.qalist.questionMatches.push(user);
@@ -132,11 +161,51 @@ angular.module('mavenAngularApp')
       }
     }
 
+    // Default editing mode.
     $scope.editing_on = false;
+    $scope.editing_text = "Off";
+    this.editName = "";
+    this.editVideo = "";
 
     $scope.editingMode = function(){
-      $scope.editing_on = !$scope.editing_on;
+      if ($scope.editing_text == "Off") {
+        $scope.editing_text = "On";
+        $scope.editing_on = true;
+      } else {
+        $scope.editing_text = "Off";
+        $scope.editing_on = false;
+
+        if ($scope.profileCtrl.editVideo.length > 0) {
+          $scope.userProfile.video = $scope.profileCtrl.editVideo;
+          $scope.video = $scope.userProfile.video;
+          localStorage.setItem("myVideo", $scope.profileCtrl.editVideo);
+        }
+
+        if ($scope.profileCtrl.editName.length > 0) {
+          $scope.userProfile.name = $scope.profileCtrl.editName;
+          localStorage.setItem("myName", $scope.profileCtrl.editName);
+        }        
+      }
     }
+
+    $scope.addToInfo = function (detailList){
+      switch (detailList) {
+        case 'experience':
+          $scope.userProfile.experiences.push($scope.profileCtrl.editExperience);
+          localStorage.setItem("myExperiences", JSON.stringify($scope.userProfile.experiences));
+          break;
+        case "passion":
+          $scope.userProfile.passions.push($scope.profileCtrl.editPassion);
+          localStorage.setItem("myPassions", JSON.stringify($scope.userProfile.passions));
+          break;
+      }
+    }
+
+    $scope.removeInfo = function (detailList, index) {
+       $scope.userProfile[detailList].splice(index, 1);
+       localStorage.setItem("myExperiences", JSON.stringify($scope.userProfile.experiences));
+    }
+
   })
   .directive('userVideo', function($sce) {
   	return {
@@ -153,14 +222,6 @@ angular.module('mavenAngularApp')
   	  }
   	};
   })
-  .directive('buttonSwitch', function() {
-    return {
-      restrict: 'A',
-        link: function(scope, element, attrs) {
-            $(element).bootstrapSwitch();
-        }
-    }
-  });
 
 angular.module('mavenAngularApp')
   .service('qalist', function() {
