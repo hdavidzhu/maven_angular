@@ -114,7 +114,7 @@ a:hover {
 
 .scroll {
   overflow-y: scroll;
-  background-color: #3eeab8;
+  background-color: #54e3cd;
   height: 737px;
 }
 
@@ -170,14 +170,17 @@ button {
 }
 
 /* Find Meeting Button */
-.scheduleMeeting {
+.introPage, .scheduleMeeting {
   position: relative;
   margin: auto;
   width: 50%;
   margin-top: 1.5em;
 }
+.introPage {
+  width: 25%
+}
 
-.scheduleButton {
+.introButton, .scheduleButton {
   width: 100%;
   font-size: 2em;
   font-weight: 700;
@@ -186,8 +189,43 @@ button {
   border-radius: .5em;
   color: #ffffff;
 }
-.scheduleButton:hover {
+
+.introButton {
+  width: 49%;
+  margin: auto;
+}
+
+.introButton:hover, .scheduleButton:hover {
   background-color: #289edc;
+}
+
+/* Intro Page */
+.introLogo {
+  width: 25%;
+  margin-left: 37.5%;
+  margin-top: 15em;
+}
+.introLogin, .introBuild {
+  background-color: #54b2e3;
+  border-radius: .5em;
+  color: #ffffff;
+  font-weight: 700;
+  height: 2em;
+  border: none;
+  margin-top: .5em;
+}
+.introBuild:hover, .introLogin:hover {
+  background-color: #289edc;
+}
+
+.introForm {
+  width: 10%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.introInput {
+  margin-top: .5em;
 }
 
 /* Toolbar Styles */
