@@ -37,7 +37,7 @@ var vickyProfile = {
 	"question": "What's the best lesson you've ever learned from your parents?",
 	"experiences": ["20 years Deloitte Consulting LLP", "5 years McKinney & Company", "Computer Sales Person 2 years"],
 	"passions": ["Gender Equity", "Swimming", "Family"],
-  "image": "../images/Vicky.jpg"
+  "image": "../images/Vicky.jpg",
   "email": "vicky@gmail.com"
 }
 
@@ -48,7 +48,7 @@ var vinceProfile = {
 	"question": "How can I integrate my passion for photography into my everyday life?",
 	"experiences": ["Teaching math at Austin Community College 10 years", "Business Analyst at Wells Fargo 5 years"],
 	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
-  "image": "../images/Vince.jpg"
+  "image": "../images/Vince.jpg",
   "email": "vince@gmail.com"
 }
 
