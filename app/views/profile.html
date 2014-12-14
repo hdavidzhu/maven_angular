@@ -24,6 +24,9 @@
 		<div ng-if="editing_on != true" class="name">{{userProfile.name}}</div>
 		<input class="name" ng-if="editing_on" placeholder="{{userProfile.name}}" ng-model="profileCtrl.editName">
 
+		<div class="scheduleMeeting ng-hide" ng-show="scheduling">
+			<button class="scheduleButton">Find Meeting Time</button>
+		</div>
 		<!-- Experience -->
 		<div  class="Experience">
 			Experience
@@ -55,12 +58,6 @@
 				</li>
 			</ul>
 		</div>
-
-	</div>
-
-	<!-- Schedule a meeting -->
-	<div class="Schedule_Meeting ng-hide" ng-show="scheduling">
-		<button>Find Meeting Time</button>
 	</div>
 
 </div>

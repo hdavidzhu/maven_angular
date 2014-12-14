@@ -2,22 +2,50 @@
 	<div ng-include src="'views/toolbar.html'"></div>
 
 	<form class = "question_form ng-hide" ng-show="q_form_show">
-	<input type="text" name="question" ><br>
-	<input type="submit" value="Search" onclick="window.location.href='/#/profile/discover_questioners'">
+	<input class="question_input" type="text" name="question" placeholder="What is it like being a woman in tech?"><br>
+	<input id="qSub" class="question_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_answerers'">
+	</form>
+
+	<form class = "answer_form ng-hide" ng-show="a_form_show">
+	<input class="answer_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_questioners'">
 	</form>
 
 	<br>
-	<div ng-hide="myAskMatches">
-	You don't have any matches!
+	<div class="matches_header">Matches</div>
+	<div ng-show="a_form_show">
+		<div ng-hide="myAnswerMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
+		<div ng-show ="myAnswerMatches" class="line"></div>
+	</div>
+	<div ng-show="q_form_show">
+		<div ng-hide="myAskMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
+		<div ng-show ="myAskMatches" class="line"></div>
 	</div>
 
 	<div >
 		<div ng-repeat="person in displayList track by $index">
 			<!-- <div ng-click = "goToProfile(person.id)"> -->
-			<div ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
-				<img width="200px" src="{{person.image}}">
-				<div>{{person.name}}</div>
+			<div class="matchDisplay col-md-3" ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
+				<img src="{{person.image}}">
+				<div class="matchName">{{person.name}}</div>
+				<div ng-show="a_form_show" class="matchQuestion">{{person.question}}</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$("input#qSub").click(function(e){
+		e.preventDefault();
+		// alert("You need to input a question!");
+	});
+	// if ($("input.question_input").val()=== ""){
+	// 	$(".question_form").submit(function(e){
+	// 		e.preventDefault();
+	// 		// alert("You need to input a question!");
+	// 	});
+	// };
+</script>

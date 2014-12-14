@@ -147,7 +147,8 @@ button {
   float: left;
   width: 50%;
   margin: 0;
-  height: 100%;
+  height: 4em;
+  padding: 0.5em 0;
 }
 
 .noButton {
@@ -164,18 +165,32 @@ button {
   background-color: #00e600;
 }
 
-/* Toolbar Styles */
-
-.notifSmall {
-  width: 10px;
-  height: 10px;
-  margin-top: 22px;
-  background: url(../images/notif.png);
-  -webkit-background-size: 10px 10px;
-  -moz-background-size: 10px 10px;
-  -o-background-size: 10px 10px;
-  background-size: 10px 10px;
+.noButton img, .yesButton img {
+  height: 100%;
 }
+
+/* Find Meeting Button */
+.scheduleMeeting {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  margin-top: 1.5em;
+}
+
+.scheduleButton {
+  width: 100%;
+  font-size: 2em;
+  font-weight: 700;
+  height: 2em;
+  background-color: #54b2e3;
+  border-radius: .5em;
+  color: #ffffff;
+}
+.scheduleButton:hover {
+  background-color: #289edc;
+}
+
+/* Toolbar Styles */
 .notifLarge {
   width: 30px;
   height: 30px;
@@ -185,6 +200,89 @@ button {
   -moz-background-size: 30px 30px;
   -o-background-size: 30px 30px;
   background-size: 30px 30px;
+  font-weight: 700;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.navbar-inverse .navbar-nav li a.notifLarge {
+  color: #ffffff;
+  padding: 0.15em;
+  text-align: center;
+}
+
+/* Question & Answer Pages*/
+
+.answer_form, .question_form {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+.question_input {
+  width: 100%;
+  height: 6em;
+  margin-top: 2em;
+}
+
+.answer_submit, .question_submit {
+  background-color: #54b2e3;
+  border: none;
+  border-radius: .5em;
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 0;
+  width: 100%;
+  margin-top: 1em;
+}
+.answer_submit:hover, .question_submit:hover {
+  background-color: #289edc;
+}
+
+.matches_header {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-left: 1em;
+} 
+.no_matches_text {
+  font-size: 1.5em;
+  margin-left: 1.8em;
+}
+
+.matchDisplay {
+  float: left;
+  position: relative;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.matchDisplay img, .matchName {
+  width: 50%;
+  margin: auto;
+}
+
+.matchName {
+  font-weight: 300;
+  font-size: 1.75em;
+}
+
+.matchName:hover, .matchQuestion:hover, .matchDisplay img:hover{
+  cursor: pointer;
+}
+
+.matchQuestion {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.line {
+  height: .1em;
+  width: 100%;
+  margin: .25em 0;
+  margin-bottom: 1em;
+  background-color: #aaa;
 }
 
 /* Responsive: Portrait tablets and up */
