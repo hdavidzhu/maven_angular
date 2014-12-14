@@ -15,7 +15,8 @@ var samProfile = {
 	"question": "What is my question?",
 	"experiences": ["Bioengineering - Tufts University, Junior", "Research Assistant MIT Bio Lab Summer 2014"],
 	"passions": ["Theater Tech", "Lighting Design", "Playing the Guitar"],
-  "image": "../images/Sam.jpg"
+  "image": "../images/Sam.jpg",
+  "email": "sam@gmail.com"
 }
 
 var sarahProfile = {
@@ -25,7 +26,8 @@ var sarahProfile = {
 	"question": "How can I use graphic design in a meaningful way?",
 	"experiences": ["Artist at Computer Fine Arts 2014-Present (6 months)", "Art Intern at Zerooone Summer 2013", "Graduated NYU Spring 2014"],
 	"passions": ["Puzzles", "Illustration", "SciFi Movies"],
-  "image": "../images/Sarah.jpg"
+  "image": "../images/Sarah.jpg",
+  "email": "sarah@gmail.com"
 }
 
 var vickyProfile = {
@@ -36,6 +38,7 @@ var vickyProfile = {
 	"experiences": ["20 years Deloitte Consulting LLP", "5 years McKinney & Company", "Computer Sales Person 2 years"],
 	"passions": ["Gender Equity", "Swimming", "Family"],
   "image": "../images/Vicky.jpg"
+  "email": "vicky@gmail.com"
 }
 
 var vinceProfile = {
@@ -46,6 +49,7 @@ var vinceProfile = {
 	"experiences": ["Teaching math at Austin Community College 10 years", "Business Analyst at Wells Fargo 5 years"],
 	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
   "image": "../images/Vince.jpg"
+  "email": "vince@gmail.com"
 }
 
 var myProfile = {
@@ -55,7 +59,8 @@ var myProfile = {
   "question": "",
   "experiences": [],
   "passions": [],
-  "image": ""
+  "image": "",
+  "email": ""
 }
 
 var profileList = [];
@@ -222,6 +227,35 @@ angular.module('mavenAngularApp')
   	  }
   	};
   })
+  .directive('modalDialog', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        show: '='
+      },
+      replace: true, // Replace with the template below
+      transclude: true, // we want to insert custom content inside the directive
+      link: function(scope, element, attrs) {
+        scope.dialogStyle = {};
+        if (attrs.width)
+          scope.dialogStyle.width = attrs.width;
+        if (attrs.height)
+          scope.dialogStyle.height = attrs.height;
+        scope.hideModal = function() {
+          scope.show = false;
+        };
+      },
+      template: "<div class='ng-modal' ng-show='show'><div class='ng-modal-overlay' ng-click='hideModal()'></div><div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div><div class='ng-modal-dialog-content' ng-transclude></div></div></div>"
+    };
+  });
+
+angular.module('mavenAngularApp')
+  .controller('ModalCtrl', ['$scope', function($scope) {
+    $scope.modalShown = false;
+    $scope.toggleModal = function() {
+    $scope.modalShown = !$scope.modalShown;
+    };
+  }]);
 
 angular.module('mavenAngularApp')
   .service('qalist', function() {

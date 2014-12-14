@@ -60,4 +60,24 @@
 		</div>
 	</div>
 
+	<!-- Schedule a meeting -->
+	<div ng-controller="ModalCtrl" class="Schedule_Meeting ng-hide" ng-show="scheduling">
+		<button ng-click="toggleModal()">Find Meeting Time</button>
+
+		<modal-dialog show='modalShown' width='750px' height='60%'>
+			<ol>
+				<li>
+		  		<a target="_blank" href="http://whenisgood.net/Create">Use WhenIsGood to schedule a Video Meeting time!</a>
+				</li>
+				<li>
+		  		<a target="_blank" href="http://hangouts.google.com/start">Send a Hangout request!</a>
+				</li>
+				<li>
+					<a target="_blank" href="mailto:{{userProfile.email}}">Send {{userProfile.name}} an email!</a>
+				</li>
+			</ol>
+
+		</modal-dialog>
+	</div>
+
 </div>
