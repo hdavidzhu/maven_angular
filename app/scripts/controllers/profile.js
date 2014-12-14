@@ -15,7 +15,8 @@ var samProfile = {
 	"question": "What is my question?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/Sam.jpg"
+  "image": "../images/Sam.jpg",
+  "email": "sam@gmail.com"
 }
 
 var sarahProfile = {
@@ -25,7 +26,8 @@ var sarahProfile = {
 	"question": "What is another question?",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/Sarah.jpg"
+  "image": "../images/Sarah.jpg",
+  "email": "sarah@gmail.com"
 }
 
 var vickyProfile = {
@@ -35,7 +37,8 @@ var vickyProfile = {
 	"question": "I'm running out of ideas.",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/Vicky.jpg"
+  "image": "../images/Vicky.jpg",
+  "email": "vicky@gmail.com"
 }
 
 var vinceProfile = {
@@ -45,7 +48,8 @@ var vinceProfile = {
 	"question": "We can fill these in later.",
 	"experiences": ["Cats", "Dogs"],
 	"passions": ["Birds", "Balloons"],
-  "image": "../images/Vince.jpg"
+  "image": "../images/Vince.jpg",
+  "email": "vince@gmail.com"
 }
 
 var myProfile = {
@@ -55,7 +59,8 @@ var myProfile = {
   "question": "",
   "experiences": [],
   "passions": [],
-  "image": ""
+  "image": "",
+  "email": ""
 }
 
 var profileList = [];
@@ -222,6 +227,35 @@ angular.module('mavenAngularApp')
   	  }
   	};
   })
+  .directive('modalDialog', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        show: '='
+      },
+      replace: true, // Replace with the template below
+      transclude: true, // we want to insert custom content inside the directive
+      link: function(scope, element, attrs) {
+        scope.dialogStyle = {};
+        if (attrs.width)
+          scope.dialogStyle.width = attrs.width;
+        if (attrs.height)
+          scope.dialogStyle.height = attrs.height;
+        scope.hideModal = function() {
+          scope.show = false;
+        };
+      },
+      template: "<div class='ng-modal' ng-show='show'><div class='ng-modal-overlay' ng-click='hideModal()'></div><div class='ng-modal-dialog' ng-style='dialogStyle'><div class='ng-modal-close' ng-click='hideModal()'>X</div><div class='ng-modal-dialog-content' ng-transclude></div></div></div>"
+    };
+  });
+
+angular.module('mavenAngularApp')
+  .controller('ModalCtrl', ['$scope', function($scope) {
+    $scope.modalShown = false;
+    $scope.toggleModal = function() {
+    $scope.modalShown = !$scope.modalShown;
+    };
+  }]);
 
 angular.module('mavenAngularApp')
   .service('qalist', function() {
