@@ -23,10 +23,7 @@
 		}
 
 		$scope.goToProfile = function(person_id){
-			// console.log(person_id);
 			var host = $location.host();
-			console.log($location.path());
-			// console.log(host + "/#/profile/person/"+ person_id);
 			$location.path( "/profile/person/" + person_id);
 		}
 
@@ -34,10 +31,9 @@
 			case "/ask":
 				$scope.q_form_show = true; 
 				populateProfiles(qa_mode);
-				console.log($scope.displayList);
 				break;
 			case "/answer":
 				populateProfiles(qa_mode);
 				break;
 		}
-  });
+  });	
