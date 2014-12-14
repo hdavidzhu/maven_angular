@@ -17,8 +17,8 @@ var samProfile = {
 	"passions": ["Theater Tech", "Lighting Design", "Playing the Guitar"],
   "image": "../images/Sam.jpg",
   "email": "sam@gmail.com",
-  "know": [],
-  "curious": [],
+  "know": ["Test"],
+  "curious": ["Test"],
 }
 
 var sarahProfile = {
@@ -30,8 +30,8 @@ var sarahProfile = {
 	"passions": ["Puzzles", "Illustration", "SciFi Movies"],
   "image": "../images/Sarah.jpg",
   "email": "sarah@gmail.com",
-  "know": [],
-  "curious": [],
+  "know": ["Test"],
+  "curious": ["Test"],
 }
 
 var vickyProfile = {
@@ -43,8 +43,8 @@ var vickyProfile = {
 	"passions": ["Gender Equity", "Swimming", "Family"],
   "image": "../images/Vicky.jpg",
   "email": "vicky@gmail.com",
-  "know": [],
-  "curious": [],
+  "know": ["Test"],
+  "curious": ["Test"],
 }
 
 var vinceProfile = {
@@ -56,8 +56,8 @@ var vinceProfile = {
 	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
   "image": "../images/Vince.jpg",
   "email": "vince@gmail.com",
-  "know": [],
-  "curious": [],
+  "know": ["Test"],
+  "curious": ["Test"],
 }
 
 var myProfile = {
@@ -68,7 +68,9 @@ var myProfile = {
   "experiences": [],
   "passions": [],
   "image": "",
-  "email": ""
+  "email": "",
+  "know": [],
+  "curious": [],
 }
 
 var profileList = [];
@@ -136,6 +138,12 @@ angular.module('mavenAngularApp')
           if (localStorage.getItem("myImage") != null) {
             myProfile.image = localStorage.getItem("myImage");
           }
+          if (localStorage.getItem("myKnowledge") != null) {
+            myProfile.know = JSON.parse(localStorage["myKnowledge"]);
+          }
+          if (localStorage.getItem("myCuriousities") != null) {
+            myProfile.curious = JSON.parse(localStorage["myCuriousities"]);
+          }
 
           profileList = [];
           profileList = [myProfile];
@@ -202,20 +210,45 @@ angular.module('mavenAngularApp')
 
     $scope.addToInfo = function (detailList){
       switch (detailList) {
-        case 'experience':
+        case 'experiences':
           $scope.userProfile.experiences.push($scope.profileCtrl.editExperience);
           localStorage.setItem("myExperiences", JSON.stringify($scope.userProfile.experiences));
           break;
-        case "passion":
+        case 'passions':
           $scope.userProfile.passions.push($scope.profileCtrl.editPassion);
           localStorage.setItem("myPassions", JSON.stringify($scope.userProfile.passions));
+          break;
+        case 'know':
+          $scope.userProfile.know.push($scope.profileCtrl.editKnowledge);
+          localStorage.setItem("myKnowledge", JSON.stringify($scope.userProfile.know));
+          break;
+        case 'curious':
+          $scope.userProfile.curious.push($scope.profileCtrl.editCuriousity);
+          localStorage.setItem("myCuriousities", JSON.stringify($scope.userProfile.curious));
           break;
       }
     }
 
     $scope.removeInfo = function (detailList, index) {
        $scope.userProfile[detailList].splice(index, 1);
-       localStorage.setItem("myExperiences", JSON.stringify($scope.userProfile.experiences));
+       var localName;
+
+       switch (detailList) {
+        case "know":
+          localName = "myKnowledge";
+          break;
+        case "curious":
+          localName = "myCuriousities";
+          break;
+        case "experiences":
+          localName = "myExperiences";
+          break;
+        case "passions":
+          localName = "myPassions";
+          break;
+       }
+
+       localStorage.setItem(localName, JSON.stringify($scope.userProfile[detailList]));
     }
 
   })

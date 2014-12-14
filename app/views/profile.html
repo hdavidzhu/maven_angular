@@ -44,6 +44,38 @@
 		<div ng-if="editing_on != true" class="name">{{userProfile.name}}</div>
 		<input class="name" ng-if="editing_on" placeholder="{{userProfile.name}}" ng-model="profileCtrl.editName">
 		
+		<!-- Know -->
+		<div  class="Know">
+			What do I know a lot about?
+			<ul >
+				<li ng-if="editing_on != true" ng-repeat="knowledge in userProfile.know track by $index">{{knowledge}}</li>
+				<li ng-if="editing_on" ng-repeat="knowledge in userProfile.know track by $index">
+					{{knowledge}}
+					<button ng-click="removeInfo('know',$index)">X</button>
+				</li>
+				<li ng-if="editing_on">
+					<input placeholder="Add more Knowledge." ng-model="profileCtrl.editKnowledge">
+					<button ng-click="addToInfo('know')">Add More</button>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Curious -->
+		<div  class="Curious">
+			What am I curious about?
+			<ul >
+				<li ng-if="editing_on != true" ng-repeat="curiousity in userProfile.curious track by $index">{{curiousity}}</li>
+				<li ng-if="editing_on" ng-repeat="curiousity in userProfile.curious track by $index">
+					{{curiousity}}
+					<button ng-click="removeInfo('curious',$index)">X</button>
+				</li>
+				<li ng-if="editing_on">
+					<input placeholder="Add more curiousity." ng-model="profileCtrl.editCuriousity">
+					<button ng-click="addToInfo('curious')">Add More</button>
+				</li>
+			</ul>
+		</div>
+
 		<!-- Experience -->
 		<div  class="Experience">
 			Experience
@@ -55,7 +87,7 @@
 				</li>
 				<li ng-if="editing_on">
 					<input placeholder="Add more Experiences." ng-model="profileCtrl.editExperience">
-					<button ng-click="addToInfo('experience')">Add More</button>
+					<button ng-click="addToInfo('experiences')">Add More</button>
 				</li>
 			</ul>
 		</div>
@@ -71,7 +103,7 @@
 				</li>
 				<li ng-if="editing_on">
 					<input placeholder="Add more Passions." ng-model="profileCtrl.editPassion">
-					<button ng-click="addToInfo('passion')">Add More</button>
+					<button ng-click="addToInfo('passions')">Add More</button>
 				</li>
 			</ul>
 		</div>
