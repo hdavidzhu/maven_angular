@@ -2,8 +2,8 @@
 	<div ng-include src="'views/toolbar.html'"></div>
 
 	<form class = "question_form ng-hide" ng-show="q_form_show">
-	<input class="question_input" type="text" name="question" placeholder="What is it like being a woman in tech?"><br>
-	<input id="qSub" class="question_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_answerers'">
+	<input class="question_input" type="text" name="question" ng-model="question" placeholder="{{question}}"><br>
+	<input id="qSub" class="question_submit" type="submit" value="Search" ng-click="saveQuestion()">
 	</form>
 
 	<form class = "answer_form ng-hide" ng-show="a_form_show">
@@ -11,6 +11,7 @@
 	</form>
 
 	<br>
+	
 	<div class="matches_header">Matches</div>
 	<div ng-show="a_form_show">
 		<div ng-hide="myAnswerMatches">
@@ -18,6 +19,7 @@
 		</div>
 		<div ng-show ="myAnswerMatches" class="line"></div>
 	</div>
+
 	<div ng-show="q_form_show">
 		<div ng-hide="myAskMatches">
 			<div class="no_matches_text">You don't have any matches!</div>

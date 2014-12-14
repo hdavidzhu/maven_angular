@@ -16,17 +16,34 @@
 		<input ng-if="editing_on" placeholder="{{userProfile.video}}" ng-model="profileCtrl.editVideo">
 
 		<div class="Yes_No ng-hide" ng-show="discovering" ng-include src="'views/yes_no.html'"></div>
+
+		<!-- Schedule a meeting -->
+		<div ng-controller="ModalCtrl" class="ng-hide" ng-show="scheduling">
+			<div class="scheduleMeeting"><button class="scheduleMeeting scheduleButton" ng-click="toggleModal()">Find Meeting Time</button></div>
+
+			<modal-dialog show='modalShown' width='750px' height='60%'>
+				<ol>
+					<li>
+			  		<a target="_blank" href="http://whenisgood.net/Create">Use WhenIsGood to schedule a Video Meeting time!</a>
+					</li>
+					<li>
+			  		<a target="_blank" href="http://hangouts.google.com/start">Send a Hangout request!</a>
+					</li>
+					<li>
+						<a target="_blank" href="mailto:{{userProfile.email}}">Send {{userProfile.name}} an email!</a>
+					</li>
+				</ol>
+			</modal-dialog>
+			
+		</div>
 	</div>
-	
+
 	<div class="col-md-5 scroll">
 		
 		<!-- Name -->
 		<div ng-if="editing_on != true" class="name">{{userProfile.name}}</div>
 		<input class="name" ng-if="editing_on" placeholder="{{userProfile.name}}" ng-model="profileCtrl.editName">
-
-		<div class="scheduleMeeting ng-hide" ng-show="scheduling">
-			<button class="scheduleButton">Find Meeting Time</button>
-		</div>
+		
 		<!-- Experience -->
 		<div  class="Experience">
 			Experience
@@ -58,26 +75,6 @@
 				</li>
 			</ul>
 		</div>
-	</div>
-
-	<!-- Schedule a meeting -->
-	<div ng-controller="ModalCtrl" class="Schedule_Meeting ng-hide" ng-show="scheduling">
-		<button ng-click="toggleModal()">Find Meeting Time</button>
-
-		<modal-dialog show='modalShown' width='750px' height='60%'>
-			<ol>
-				<li>
-		  		<a target="_blank" href="http://whenisgood.net/Create">Use WhenIsGood to schedule a Video Meeting time!</a>
-				</li>
-				<li>
-		  		<a target="_blank" href="http://hangouts.google.com/start">Send a Hangout request!</a>
-				</li>
-				<li>
-					<a target="_blank" href="mailto:{{userProfile.email}}">Send {{userProfile.name}} an email!</a>
-				</li>
-			</ol>
-
-		</modal-dialog>
 	</div>
 
 </div>

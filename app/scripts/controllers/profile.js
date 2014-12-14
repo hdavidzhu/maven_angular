@@ -16,7 +16,9 @@ var samProfile = {
 	"experiences": ["Bioengineering - Tufts University, Junior", "Research Assistant MIT Bio Lab Summer 2014"],
 	"passions": ["Theater Tech", "Lighting Design", "Playing the Guitar"],
   "image": "../images/Sam.jpg",
-  "email": "sam@gmail.com"
+  "email": "sam@gmail.com",
+  "know": [],
+  "curious": [],
 }
 
 var sarahProfile = {
@@ -27,7 +29,9 @@ var sarahProfile = {
 	"experiences": ["Artist at Computer Fine Arts 2014-Present (6 months)", "Art Intern at Zerooone Summer 2013", "Graduated NYU Spring 2014"],
 	"passions": ["Puzzles", "Illustration", "SciFi Movies"],
   "image": "../images/Sarah.jpg",
-  "email": "sarah@gmail.com"
+  "email": "sarah@gmail.com",
+  "know": [],
+  "curious": [],
 }
 
 var vickyProfile = {
@@ -38,7 +42,9 @@ var vickyProfile = {
 	"experiences": ["20 years Deloitte Consulting LLP", "5 years McKinney & Company", "Computer Sales Person 2 years"],
 	"passions": ["Gender Equity", "Swimming", "Family"],
   "image": "../images/Vicky.jpg",
-  "email": "vicky@gmail.com"
+  "email": "vicky@gmail.com",
+  "know": [],
+  "curious": [],
 }
 
 var vinceProfile = {
@@ -49,7 +55,9 @@ var vinceProfile = {
 	"experiences": ["Teaching math at Austin Community College 10 years", "Business Analyst at Wells Fargo 5 years"],
 	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
   "image": "../images/Vince.jpg",
-  "email": "vince@gmail.com"
+  "email": "vince@gmail.com",
+  "know": [],
+  "curious": [],
 }
 
 var myProfile = {
@@ -160,7 +168,6 @@ angular.module('mavenAngularApp')
       localStorage.setItem(user.name, user);
       if (list == 'q') {
         $scope.qalist.questionMatches.push(user);
-        console.log($scope.qalist.questionMatches);
       } else if (list == 'a') {
         $scope.qalist.answerMatches.push(user);
       }
