@@ -3,7 +3,7 @@
 
 	<form class = "question_form ng-hide" ng-show="q_form_show">
 	<input class="question_input" type="text" name="question" placeholder="What is it like being a woman in tech?"><br>
-	<input class="question_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_answerers'">
+	<input id="qSub" class="question_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_answerers'">
 	</form>
 
 	<form class = "answer_form ng-hide" ng-show="a_form_show">
@@ -36,3 +36,16 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$("input#qSub").click(function(e){
+		e.preventDefault();
+		// alert("You need to input a question!");
+	});
+	// if ($("input.question_input").val()=== ""){
+	// 	$(".question_form").submit(function(e){
+	// 		e.preventDefault();
+	// 		// alert("You need to input a question!");
+	// 	});
+	// };
+</script>
