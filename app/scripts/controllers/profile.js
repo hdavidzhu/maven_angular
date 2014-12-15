@@ -17,8 +17,8 @@ var samProfile = {
 	"passions": ["Theater Tech", "Lighting Design", "Playing the Guitar"],
   "image": "../images/Sam.jpg",
   "email": "sam@gmail.com",
-  "know": ["Test"],
-  "curious": ["Test"],
+  "know": ["Bio", "College applications", "Research positions"],
+  "curious": ["Music", "Design", "Postgrad Life"],
 }
 
 var sarahProfile = {
@@ -30,8 +30,8 @@ var sarahProfile = {
 	"passions": ["Puzzles", "Illustration", "SciFi Movies"],
   "image": "../images/Sarah.jpg",
   "email": "sarah@gmail.com",
-  "know": ["Test"],
-  "curious": ["Test"],
+  "know": ["Art", "Typography", "Design school"],
+  "curious": ["Science", "Post-grad life"],
 }
 
 var vickyProfile = {
@@ -43,8 +43,8 @@ var vickyProfile = {
 	"passions": ["Gender Equity", "Swimming", "Family"],
   "image": "../images/Vicky.jpg",
   "email": "vicky@gmail.com",
-  "know": ["Test"],
-  "curious": ["Test"],
+  "know": ["Finance", "Career Development"],
+  "curious": ["Machine Learning", "Alternative energy", "New technology"],
 }
 
 var vinceProfile = {
@@ -56,21 +56,21 @@ var vinceProfile = {
 	"passions": ["Photography", "Education", "Family", "Gardening", "Texas BBQ"],
   "image": "../images/Vince.jpg",
   "email": "vince@gmail.com",
-  "know": ["Test"],
-  "curious": ["Test"],
+  "know": ["Teaching", "Business"],
+  "curious": ["HDR", "Selfies", "Birds", "Home cooking"],
 }
 
 var myProfile = {
   "id": "",
-  "name": "",
-  "video": "",
-  "question": "",
-  "experiences": [],
-  "passions": [],
+  "name": "(Enter Name Here)",
+  "video": "(Enter video link from Youtube here)",
+  "question": "(What is your question?)",
+  "experiences": ["(Enter some experiences here.)"],
+  "passions": ["(Enter some passions here.)"],
   "image": "",
   "email": "",
-  "know": [],
-  "curious": [],
+  "know": ["(What do you know a lot about?)"],
+  "curious": ["(What are you curious about?)"],
 }
 
 var profileList = [];

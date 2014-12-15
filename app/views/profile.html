@@ -21,8 +21,8 @@
 		<div ng-controller="ModalCtrl" class="ng-hide" ng-show="scheduling">
 			<div class="scheduleMeeting"><button class="scheduleMeeting scheduleButton" ng-click="toggleModal()">Find Meeting Time</button></div>
 
-			<modal-dialog show='modalShown' width='750px' height='60%'>
-				<ol>
+			<modal-dialog class="ModalText" show='modalShown' width='750px' height='60%'>
+				<ol style="padding-top:70px">
 					<li>
 			  		<a target="_blank" href="http://whenisgood.net/Create">Use WhenIsGood to schedule a Video Meeting time!</a>
 					</li>
@@ -94,7 +94,7 @@
 		
 		<!-- Passions -->
 		<div class="Passions">
-			Passions
+			Hobbies and Passions
 			<ul>
 				<li ng-if="editing_on != true" ng-repeat="passion in userProfile.passions track by $index">{{passion}}</li>
 				<li ng-if="editing_on" ng-repeat="passion in userProfile.passions track by $index">
