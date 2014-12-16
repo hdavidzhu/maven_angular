@@ -1,4 +1,46 @@
-<div ng-controller="QACtrl"> <div ng-include src="'views/toolbar.html'"></div> <form class="question_form ng-hide" ng-show="q_form_show"> <input class="question_input" type="text" name="question" ng-model="question" placeholder="{{question}}"><br> <input id="qSub" class="question_submit" type="submit" value="Search" ng-click="saveQuestion()"> </form> <form class="answer_form ng-hide" ng-show="a_form_show"> <input class="answer_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_questioners'"> </form> <br> <div class="matches_header">Matches</div> <div ng-show="a_form_show"> <div ng-hide="myAnswerMatches"> <div class="no_matches_text">You don't have any matches!</div> </div> <div ng-show="myAnswerMatches" class="line"></div> </div> <div ng-show="q_form_show"> <div ng-hide="myAskMatches"> <div class="no_matches_text">You don't have any matches!</div> </div> <div ng-show="myAskMatches" class="line"></div> </div> <div> <div ng-repeat="person in displayList track by $index"> <!-- <div ng-click = "goToProfile(person.id)"> --> <div class="matchDisplay col-md-3" ng-click="goToProfile('{{person.id}}')" ng-init="count=0"> <img src="{{person.image}}"> <div class="matchName">{{person.name}}</div> <div ng-show="a_form_show" class="matchQuestion">{{person.question}}</div> </div> </div> </div> </div> <script type="text/javascript">$("input#qSub").click(function(e){
+<div ng-controller="QACtrl">
+	<div ng-include src="'views/toolbar.html'"></div>
+
+	<form class = "question_form ng-hide" ng-show="q_form_show">
+	<input class="question_input" type="text" name="question" ng-model="question" placeholder="{{question}}"><br>
+	<input id="qSub" class="question_submit" type="submit" value="Search" ng-click="saveQuestion()">
+	</form>
+
+	<form class = "answer_form ng-hide" ng-show="a_form_show">
+	<input class="answer_submit" type="submit" value="Search" onclick="window.location.href='/#/profile/discover_questioners'">
+	</form>
+
+	<br>
+	
+	<div class="matches_header">Matches</div>
+	<div ng-show="a_form_show">
+		<div ng-hide="myAnswerMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
+		<div ng-show ="myAnswerMatches" class="line"></div>
+	</div>
+
+	<div ng-show="q_form_show">
+		<div ng-hide="myAskMatches">
+			<div class="no_matches_text">You don't have any matches!</div>
+		</div>
+		<div ng-show ="myAskMatches" class="line"></div>
+	</div>
+
+	<div >
+		<div ng-repeat="person in displayList track by $index">
+			<!-- <div ng-click = "goToProfile(person.id)"> -->
+			<div class="matchDisplay col-md-3" ng-click = "goToProfile('{{person.id}}')" ng-init="count=0">
+				<img src="{{person.image}}">
+				<div class="matchName">{{person.name}}</div>
+				<div ng-show="a_form_show" class="matchQuestion">{{person.question}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$("input#qSub").click(function(e){
 		e.preventDefault();
 		// alert("You need to input a question!");
 	});
@@ -7,4 +49,5 @@
 	// 		e.preventDefault();
 	// 		// alert("You need to input a question!");
 	// 	});
-	// };</script>
+	// };
+</script>
