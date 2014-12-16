@@ -261,7 +261,7 @@ angular.module('mavenAngularApp')
   	  link: function (scope) {
   	      scope.$watch('video', function (newVal) {
   	         if (newVal) {
-  	             scope.url = $sce.trustAsResourceUrl("http://www.youtube.com/embed/" + newVal + "?hd=1&rel=0&autohide=1&showinfo=0");
+  	             scope.url = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + newVal + "?hd=1&rel=0&autohide=1&showinfo=0");
   	         }
   	      });
   	  }
