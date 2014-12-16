@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "dependencies": {
     "bytes": "~1.0.0",
+    "express": "^4.10.6",
+    "gzippo": "^0.2.0",
     "imagemin-gifsicle": "~4.0.0",
+    "morgan": "^1.5.0",
     "simple-fmt": "~0.1.0"
   },
   "devDependencies": {
